@@ -1,8 +1,8 @@
 <h2 align="start">Improved project template for Android Studio</h1>
-Unfortunately the default Android Studio template has a lot of unnecessary stuff that has to be removed every time. And does not have things that are needed, such as splash screen or build scripts using kotlin dsl. This template was created to fix that    
+Unfortunately the default Android Studio template has a lot of unnecessary stuff that has to be removed every time. And does not have things that are needed, such as splash screen or build scripts using kotlin dsl. This template was created to fix that
+<br />
+<br />
 
-
-      \
 Main features:
 - src/main/kotlin instead of src/main/java
 - minimum number of dependencies
