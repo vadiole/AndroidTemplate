@@ -1,6 +1,7 @@
 package vadiole.template
 
 import android.app.Activity
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.TextView
@@ -24,6 +25,7 @@ class MainActivity : Activity() {
 
         setContentView(
             TextView(this).apply {
+                setTextColor(Color.GRAY)
                 gravity = Gravity.CENTER
                 text = "Template by vadiole"
             }
