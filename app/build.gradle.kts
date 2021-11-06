@@ -41,6 +41,7 @@ android {
 
     lint {
         disable(
+            "SetTextI18n",
             "RtlHardcoded", "RtlCompat", "RtlEnabled",
             "ViewConstructor",
             "UnusedAttribute"
