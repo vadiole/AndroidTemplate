@@ -5,7 +5,9 @@ import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.Gravity
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener
 import androidx.core.view.WindowCompat
@@ -32,8 +34,10 @@ class MainActivity : Activity() {
 
         setContentView(
             TextView(this).apply {
-                setTextColor(Color.GRAY)
+                layoutParams = FrameLayout.LayoutParams(fill, fill)
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, 14f.dpf(context))
                 gravity = Gravity.CENTER
+                setTextColor(Color.GRAY)
                 text = "Template by vadiole"
             }
         )
