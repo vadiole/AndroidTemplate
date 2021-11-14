@@ -13,6 +13,7 @@ android {
         targetSdk = 31
         versionCode = 1
         versionName = "1.0"
+        resourceConfigurations.addAll(listOf("en"))
         setProperty("archivesBaseName", "Template v$versionName ($versionCode)")
     }
 
@@ -20,6 +21,7 @@ android {
         getByName("debug") {
             applicationIdSuffix = ".debug"
             isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
 
@@ -28,6 +30,16 @@ android {
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+    }
+
+    packagingOptions {
+        resources.excludes.addAll(
+            listOf(
+                "META-INF/LICENSE",
+                "META-INF/NOTICE",
+                "META-INF/java.properties",
+            )
+        )
     }
 
     compileOptions {
