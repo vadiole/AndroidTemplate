@@ -14,7 +14,6 @@ android {
         versionCode = 1
         versionName = "1.0"
         resourceConfigurations.addAll(listOf("en"))
-        setProperty("archivesBaseName", "Template v$versionName ($versionCode)")
     }
 
     buildTypes {
@@ -38,6 +37,7 @@ android {
                 "META-INF/LICENSE",
                 "META-INF/NOTICE",
                 "META-INF/java.properties",
+                "META-INF/gradle/incremental.annotation.processors",
             )
         )
     }
@@ -49,14 +49,27 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        languageVersion = "1.6"
+    }
+
+    applicationVariants.all {
+        outputs.all {
+            if (this is com.android.build.gradle.internal.api.BaseVariantOutputImpl) {
+                outputFileName = "${"Template"}_v$versionName($versionCode)-${name}.apk"
+            }
+        }
     }
 
     lint {
-        disable(
-            "SetTextI18n",
-            "RtlHardcoded", "RtlCompat", "RtlEnabled",
-            "ViewConstructor",
-            "UnusedAttribute"
+        disable.addAll(
+            listOf(
+                "SetTextI18n",
+                "RtlHardcoded", "RtlCompat", "RtlEnabled",
+                "ViewConstructor",
+                "UnusedAttribute",
+                "NotifyDataSetChanged",
+                "ktNoinlineFunc",
+            )
         )
     }
 }
