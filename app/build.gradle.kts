@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-//    kotlin("kapt")
 }
 
 android {
@@ -14,6 +13,7 @@ android {
         versionCode = 1
         versionName = "1.0"
         resourceConfigurations.addAll(listOf("en"))
+        setProperty("archivesBaseName", "Template-v$versionName")
     }
 
     buildTypes {
@@ -50,14 +50,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
         languageVersion = "1.6"
-    }
-
-    applicationVariants.all {
-        outputs.all {
-            if (this is com.android.build.gradle.internal.api.BaseVariantOutputImpl) {
-                outputFileName = "${"Template"}_v$versionName($versionCode)-${name}.apk"
-            }
-        }
     }
 
     lint {
