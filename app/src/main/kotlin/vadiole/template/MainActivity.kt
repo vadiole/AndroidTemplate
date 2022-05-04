@@ -3,7 +3,6 @@ package vadiole.template
 import android.app.Activity
 import android.content.res.Configuration
 import android.graphics.Color
-import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.Gravity
@@ -48,12 +47,14 @@ class MainActivity : Activity() {
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
-        updateSystemBars(resources.configuration)
+        if (hasFocus) {
+            updateSystemBars(resources.configuration)
+        }
     }
 
     private fun updateSystemBars(configuration: Configuration) {
-        val isLight = SDK_INT >= 30 && configuration.isNightModeActive
-        insetsControllerX.isAppearanceLightStatusBars = !isLight
-        insetsControllerX.isAppearanceLightNavigationBars = !isLight
+        val isNightMode = configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+        insetsControllerX.isAppearanceLightStatusBars = !isNightMode
+        insetsControllerX.isAppearanceLightNavigationBars = !isNightMode
     }
 }
