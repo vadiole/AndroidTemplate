@@ -13,11 +13,8 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowCompat.setDecorFitsSystemWindows
 import androidx.core.view.WindowInsetsCompat.Type.navigationBars
 import androidx.core.view.WindowInsetsCompat.Type.statusBars
-import androidx.core.view.WindowInsetsControllerCompat
 
-class MainActivity : Activity() {
-    private val insetsControllerX: WindowInsetsControllerCompat
-        get() = WindowCompat.getInsetsController(window, window.decorView)!!
+class MainActivity : Activity(), ResourcesOwner {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +26,11 @@ class MainActivity : Activity() {
             )
             insets
         }
+
         setContentView(
             TextView(this).apply {
                 layoutParams = FrameLayout.LayoutParams(matchParent, matchParent)
-                setTextSize(TypedValue.COMPLEX_UNIT_PX, 14f.dp(context))
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, 14f.dp)
                 gravity = Gravity.CENTER
                 setTextColor(Color.GRAY)
                 text = "Template by vadiole"
@@ -54,7 +52,8 @@ class MainActivity : Activity() {
 
     private fun updateSystemBars(configuration: Configuration) {
         val isNightMode = configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
-        insetsControllerX.isAppearanceLightStatusBars = !isNightMode
-        insetsControllerX.isAppearanceLightNavigationBars = !isNightMode
+        val insetsController = WindowCompat.getInsetsController(window, window.decorView)
+        insetsController.isAppearanceLightStatusBars = !isNightMode
+        insetsController.isAppearanceLightNavigationBars = !isNightMode
     }
 }
