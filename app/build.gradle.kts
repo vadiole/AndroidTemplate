@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk = 31
+    compileSdk = 32
 
     defaultConfig {
         applicationId = "vadiole.template"
         minSdk = 26
-        targetSdk = 31
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
         resourceConfigurations.addAll(listOf("en"))
@@ -43,8 +43,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+        kotlinOptions {
+            jvmTarget = "11"
+        }
     }
 
     lint {
@@ -56,11 +59,12 @@ android {
                 "UnusedAttribute",
                 "NotifyDataSetChanged",
                 "ktNoinlineFunc",
+                "ClickableViewAccessibility",
             )
         )
     }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.core:core-ktx:1.8.0")
 }
