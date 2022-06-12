@@ -8,8 +8,8 @@ Unfortunately the default Android Studio template has a lot of unnecessary stuff
 - minimum number of dependencies
 - useful Manifest attributes
 - build.gradle using Kotlin
-- better proguard rules
 - edge-to-edge support
+- proguard rules
 - no xml layouts
 - splash screen
 <br />
