@@ -8,11 +8,12 @@ Unfortunately the default Android Studio template has a lot of unnecessary stuff
 - minimum number of dependencies
 - useful Manifest attributes
 - build.gradle using Kotlin
+- better proguard rules
 - edge-to-edge support
 - no xml layouts
 - splash screen
-  <br />
-  <br />
+<br />
+<br />
 
 ### How to setup:
 1. change package name
