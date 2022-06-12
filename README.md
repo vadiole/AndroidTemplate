@@ -13,7 +13,6 @@ Unfortunately the default Android Studio template has a lot of unnecessary stuff
 - no xml layouts
 - splash screen
 <br />
-<br />
 
 ### How to setup:
 1. change package name
