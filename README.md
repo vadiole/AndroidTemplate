@@ -7,8 +7,8 @@ Unfortunately the default Android Studio template has a lot of unnecessary stuff
 - src/main/kotlin instead of src/main/java
 - minimum number of dependencies
 - useful Manifest attributes
-- build.gradle using Kotlin
 - edge-to-edge support
+- build.gradle.kts
 - proguard rules
 - no xml layouts
 - splash screen
