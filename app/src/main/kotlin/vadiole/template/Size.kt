@@ -10,7 +10,7 @@ const val wrapContent = ViewGroup.LayoutParams.WRAP_CONTENT
 /**
  * A little hack to avoid passing [Resources] every time when you need a size in dp
  *
- * Can be removed when context receivers become stable
+ * Can be refactored to context receivers when available
  */
 interface ResourcesOwner {
     fun getResources(): Resources
