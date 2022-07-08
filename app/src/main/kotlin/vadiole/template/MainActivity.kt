@@ -41,7 +41,7 @@ class MainActivity : Activity(), ResourcesOwner {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         updateSystemBars(newConfig)
-        window.decorView.setBackgroundColor(getColor(R.color.windowBackground))
+        window.decorView.setBackgroundColor(getColor(R.color.window_background))
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
