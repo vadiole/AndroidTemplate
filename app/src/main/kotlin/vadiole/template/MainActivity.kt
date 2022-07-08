@@ -30,8 +30,8 @@ class MainActivity : Activity(), ResourcesOwner {
         setContentView(
             TextView(this).apply {
                 layoutParams = FrameLayout.LayoutParams(matchParent, matchParent)
-                setTextSize(TypedValue.COMPLEX_UNIT_PX, 14f.dp)
                 gravity = Gravity.CENTER
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, 14f.dp)
                 setTextColor(Color.GRAY)
                 text = "Template by vadiole"
             }

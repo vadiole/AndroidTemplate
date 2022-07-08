@@ -36,8 +36,12 @@ android {
             listOf(
                 "META-INF/LICENSE",
                 "META-INF/NOTICE",
+                "META-INF/DEPENDENCIES",
                 "META-INF/java.properties",
-                "META-INF/gradle/incremental.annotation.processors",
+                "**/*.txt",
+                "**/*.md",
+                "*.md",
+                "*.txt",
             )
         )
     }
