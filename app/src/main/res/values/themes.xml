@@ -7,5 +7,6 @@
         <item name="android:windowSplashscreenContent">@drawable/ic_launcher_splash</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:splitMotionEvents">false</item>
     </style>
 </resources>
