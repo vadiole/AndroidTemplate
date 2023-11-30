@@ -3,9 +3,8 @@
 
     <application
         android:name=".TemplateApp"
-        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="false"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:maxAspectRatio="2.5"
