@@ -13,8 +13,10 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowCompat.setDecorFitsSystemWindows
 import androidx.core.view.WindowInsetsCompat.Type.navigationBars
 import androidx.core.view.WindowInsetsCompat.Type.statusBars
+import vadiole.template.ui.Density
+import vadiole.template.ui.matchParent
 
-class MainActivity : Activity(), ResourcesOwner {
+class MainActivity : Activity(), Density {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,7 @@ class MainActivity : Activity(), ResourcesOwner {
             TextView(this).apply {
                 layoutParams = FrameLayout.LayoutParams(matchParent, matchParent)
                 gravity = Gravity.CENTER
-                setTextSize(TypedValue.COMPLEX_UNIT_PX, 14f.dp)
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, 14f.sp)
                 setTextColor(Color.GRAY)
                 text = "Template by vadiole"
             }
