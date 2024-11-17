@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Template">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:exported="true"
             android:launchMode="singleTask">
 

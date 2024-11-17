@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat.Type.statusBars
 import vadiole.template.ui.Density
 import vadiole.template.ui.matchParent
 
-class MainActivity : Activity(), Density {
+class HomeActivity : Activity(), Density {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
