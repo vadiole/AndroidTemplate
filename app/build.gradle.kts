@@ -4,12 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk = 34
     namespace = "vadiole.template"
+    compileSdk = 35
+
     defaultConfig {
         applicationId = "vadiole.template"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
         resourceConfigurations.addAll(listOf("en"))
@@ -70,5 +71,5 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.core:core-ktx:1.15.0")
 }
