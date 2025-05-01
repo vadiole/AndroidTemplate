@@ -13,8 +13,12 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-        resourceConfigurations.addAll(listOf("en"))
         setProperty("archivesBaseName", "Template-v$versionName")
+    }
+
+    androidResources {
+        @Suppress("UnstableApiUsage")
+        localeFilters += listOf("en")
     }
 
     buildTypes {
@@ -71,5 +75,5 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.core:core-ktx:1.16.0")
 }
