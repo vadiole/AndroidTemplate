@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -22,41 +22,27 @@ android {
     }
 
     buildTypes {
-        getByName("debug") {
+        debug {
             applicationIdSuffix = ".debug"
-            isMinifyEnabled = false
-            isShrinkResources = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles("proguard-rules.pro")
         }
 
-        getByName("release") {
+        release {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles("proguard-rules.pro")
         }
     }
 
-    packaging {
-        resources.excludes.addAll(
-            listOf(
-                "META-INF/LICENSE",
-                "META-INF/NOTICE",
-                "META-INF/DEPENDENCIES",
-                "META-INF/java.properties",
-                "**/*.txt",
-                "**/*.md",
-                "*.md",
-                "*.txt",
-            )
-        )
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-        kotlinOptions {
-            jvmTarget = "17"
-        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     lint {
@@ -75,5 +61,5 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.16.0")
+    implementation(libs.androidx.core.ktx)
 }
